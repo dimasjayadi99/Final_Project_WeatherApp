@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pantera/app/features/earth_quake/presentation/bindings/earth_quake_binding.dart';
+import 'package:pantera/app/features/earth_quake/presentation/pages/earth_quake_history_page.dart';
 import 'package:pantera/app/features/earth_quake/presentation/pages/earth_quake_page.dart';
 import 'package:pantera/app/features/introduction/bindings/splash_screen_binding.dart';
 import 'package:pantera/app/features/settings/presentation/pages/about_page.dart';
@@ -74,6 +75,12 @@ class MyRouterConfig {
     GetPage(
       name: RouterConst.notification,
       page: () => const NotifikasiPage(),
+    ),
+    GetPage(
+      name: RouterConst.earthQuakeHistory,
+      page: () => EarthQuakeHistoryPage(
+        list: Get.arguments['list'],
+      ),
     ),
   ];
 }

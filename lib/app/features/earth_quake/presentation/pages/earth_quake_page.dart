@@ -184,12 +184,14 @@ class EarthQuakePage extends GetView<EarthQuakeController> {
   _buildHistoryEarthQuake(list) {
     return Column(
       children: [
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text("Riwayat Gempa",
+            const Text("Riwayat Gempa",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-            Text('Lihat Lainnya')
+            GestureDetector(
+                onTap: controller.toEarthQuakeHistory,
+                child: const Text('Lihat Lainnya'))
           ],
         ),
         const Gap.v(

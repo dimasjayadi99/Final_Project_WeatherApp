@@ -62,6 +62,11 @@ class EarthQuakeController extends GetxController {
     }
   }
 
+  void toEarthQuakeHistory() {
+    Get.toNamed(RouterConst.earthQuakeHistory,
+        arguments: {'list': listEarthQuake.value});
+  }
+
   void listToDetailMap(int index) {
     if (listEarthQuake.value != null && index >= 0) {
       EarthQuakeEntity selectedEarthQuake = listEarthQuake.value![index];
