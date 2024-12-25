@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pantera/app/core/constant/path_const.dart';
+import 'package:pantera/app/core/constant/router_const.dart';
 import '../../../../core/constant/style_const.dart';
 import '../../../../shared/gap.dart';
 import '../../controllers/settings_controller.dart';
@@ -18,19 +19,17 @@ class SettingsPage extends GetView<SettingsController> {
       title: 'Notifikasi',
       label: 'Jadwalkan penerimaan notifikasi',
       icon: Icons.notifications_outlined,
-      onTap: (BuildContext context) {},
+      onTap: (BuildContext context) {
+        Get.toNamed(RouterConst.notification);
+      },
     ),
     MenuProfile(
-      title: 'Laporan Bug',
-      label: 'Laporkan bug dengan mudah',
-      icon: Icons.bug_report_outlined,
-      onTap: (BuildContext context) {},
-    ),
-    MenuProfile(
-      title: 'Bagikan Aplikasi',
-      label: 'Bagikan ke media sosial',
-      icon: Icons.share_outlined,
-      onTap: (BuildContext context) {},
+      title: 'Tentang Aplikasi',
+      label: 'Informasi lebih lanjut aplikasi',
+      icon: Icons.info_outline,
+      onTap: (BuildContext context) {
+        Get.toNamed(RouterConst.about);
+      },
     ),
     MenuProfile(
       title: 'Keluar',
@@ -89,17 +88,18 @@ class SettingsPage extends GetView<SettingsController> {
                   ),
                 ),
                 const Gap.h(w: 16),
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Dimas Jayadi',
-                      style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                      '${controller.user.value?.firstName} ${controller.user.value?.lastName}',
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 16),
                     ),
+                    const Gap.v(h: 4),
                     Text(
-                      'dimasjayadi@gmail.com',
-                      style: TextStyle(color: Colors.grey),
+                      '${controller.user.value?.email}',
+                      style: const TextStyle(color: Colors.grey),
                     ),
                   ],
                 ),

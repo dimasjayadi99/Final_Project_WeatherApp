@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
+import 'package:pantera/app/core/constant/router_const.dart';
 import 'package:pantera/app/core/enum/response_state.dart';
 import 'package:pantera/app/features/earth_quake/domain/entities/earth_quake_entity.dart';
 import 'package:pantera/app/features/earth_quake/domain/use_case/fetch_earth_quake.dart';
 import 'package:pantera/app/features/earth_quake/domain/use_case/fetch_list_earth_quake.dart';
-import 'package:pantera/app/features/earth_quake/presentation/pages/detail_map_page.dart';
 
 class EarthQuakeController extends GetxController {
   final FetchEarthQuake earthQuakeUC;
@@ -51,11 +51,14 @@ class EarthQuakeController extends GetxController {
   void toDetailMap(EarthQuakeEntity? earthQuakeEntity) {
     if (earthQuakeEntity != null) {
       List<String> splitCoordinates = earthQuakeEntity.coordinates.split(',');
-      Get.to(DetailMapPage(
-        entity: currentEarthQuake.value!,
-        lintang: double.parse(splitCoordinates[0]),
-        bujur: double.parse(splitCoordinates[1]),
-      ));
+      Get.toNamed(
+        RouterConst.earthQuakeDetail,
+        arguments: {
+          'entity': currentEarthQuake.value!,
+          'lintang': double.parse(splitCoordinates[0]),
+          'bujur': double.parse(splitCoordinates[1]),
+        },
+      );
     }
   }
 
@@ -63,11 +66,14 @@ class EarthQuakeController extends GetxController {
     if (listEarthQuake.value != null && index >= 0) {
       EarthQuakeEntity selectedEarthQuake = listEarthQuake.value![index];
       List<String> splitCoordinates = selectedEarthQuake.coordinates.split(',');
-      Get.to(DetailMapPage(
-        entity: selectedEarthQuake,
-        lintang: double.parse(splitCoordinates[0]),
-        bujur: double.parse(splitCoordinates[1]),
-      ));
+      Get.toNamed(
+        RouterConst.earthQuakeDetail,
+        arguments: {
+          'entity': selectedEarthQuake,
+          'lintang': double.parse(splitCoordinates[0]),
+          'bujur': double.parse(splitCoordinates[1]),
+        },
+      );
     }
   }
 }

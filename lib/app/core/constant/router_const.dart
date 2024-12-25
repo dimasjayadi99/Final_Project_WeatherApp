@@ -10,4 +10,6 @@ class RouterConst {
   static const setting = '/setting';
   static const earthQuake = '/earthquake';
   static const earthQuakeDetail = '/earthquakeDetail';
+  static const about = '/about';
+  static const notification = '/notification';
 }

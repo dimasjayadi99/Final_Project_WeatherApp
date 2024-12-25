@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:pantera/app/features/earth_quake/presentation/bindings/earth_quake_binding.dart';
 import 'package:pantera/app/features/earth_quake/presentation/pages/earth_quake_page.dart';
 import 'package:pantera/app/features/introduction/bindings/splash_screen_binding.dart';
+import 'package:pantera/app/features/settings/presentation/pages/about_page.dart';
+import 'package:pantera/app/features/settings/presentation/pages/notifikasi_page.dart';
 import 'package:pantera/app/features/settings/presentation/pages/settings_page.dart';
 import 'package:pantera/app/features/weather/presentation/bindings/weather_home_binding.dart';
 import 'package:pantera/app/features/weather/presentation/pages/weather_home_page.dart';
@@ -9,6 +11,7 @@ import '../../../main.dart';
 import '../../core/constant/router_const.dart';
 import '../../features/auth/presentation/bindings/login_binding.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
+import '../../features/earth_quake/presentation/pages/detail_map_page.dart';
 import '../../features/introduction/bindings/introduction_binding.dart';
 import '../../features/introduction/presentation/pages/introduction_page.dart';
 import '../../features/auth/presentation/bindings/register_binding.dart';
@@ -53,8 +56,24 @@ class MyRouterConfig {
       binding: EarthQuakeBinding(),
     ),
     GetPage(
+      name: RouterConst.earthQuakeDetail,
+      page: () => DetailMapPage(
+        entity: Get.arguments['entity'],
+        lintang: Get.arguments['lintang'],
+        bujur: Get.arguments['bujur'],
+      ),
+    ),
+    GetPage(
       name: RouterConst.setting,
       page: () => SettingsPage(),
+    ),
+    GetPage(
+      name: RouterConst.about,
+      page: () => const AboutPage(),
+    ),
+    GetPage(
+      name: RouterConst.notification,
+      page: () => const NotifikasiPage(),
     ),
   ];
 }

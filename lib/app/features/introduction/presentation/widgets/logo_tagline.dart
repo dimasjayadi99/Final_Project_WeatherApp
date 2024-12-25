@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pantera/app/core/constant/path_const.dart';
 import '../../../../core/constant/style_const.dart';
 import '../../../../shared/gap.dart';
 
@@ -13,7 +14,7 @@ class LogoTagline extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(
-            'assets/ic_launcher.png',
+            PathConst.logoLauncher,
             width: 80,
             height: 80,
           ),

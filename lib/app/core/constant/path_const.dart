@@ -7,6 +7,7 @@ class PathConst {
   static const illustrationImage4 = 'assets/images/illustration_4.png';
   static const illustrationImage5 = 'assets/images/illustration_5.png';
   static const defaultAvatar = 'assets/images/default_avatar.jpg';
+  static const logoLauncher = 'assets/ic_launcher.png';
 
   static const rainyIcon = 'assets/images/ic_rainy.png';
   static const cloudyIcon = 'assets/images/ic_cloudy.png';
