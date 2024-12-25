@@ -88,21 +88,23 @@ class SettingsPage extends GetView<SettingsController> {
                   ),
                 ),
                 const Gap.h(w: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '${controller.user.value?.firstName} ${controller.user.value?.lastName}',
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w700, fontSize: 16),
-                    ),
-                    const Gap.v(h: 4),
-                    Text(
-                      '${controller.user.value?.email}',
-                      style: const TextStyle(color: Colors.grey),
-                    ),
-                  ],
-                ),
+                Obx(
+                  () => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '${controller.user.value?.firstName ?? 'Pengguna'} ${controller.user.value?.lastName ?? ''}',
+                        style: const TextStyle(
+                            fontWeight: FontWeight.w700, fontSize: 16),
+                      ),
+                      const Gap.v(h: 4),
+                      Text(
+                        controller.user.value?.email ?? 'email address',
+                        style: const TextStyle(color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
             const Gap.v(h: 16),
