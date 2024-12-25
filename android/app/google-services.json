@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "674224314064",
+    "project_id": "pantera-2b66a",
+    "storage_bucket": "pantera-2b66a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674224314064:android:8bae140c29ee757b96f0d5",
+        "android_client_info": {
+          "package_name": "com.example.pantera"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSKvjqB1WWzhs6UuGc12TfAKxvDgoe6W8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
