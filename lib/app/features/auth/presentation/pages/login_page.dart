@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const Gap.v(h: 32),
                   CustomTextField().generalForm('Alamat email', Icons.email,
-                      _emailController, TextInputType.emailAddress),
+                      _emailController, TextInputType.emailAddress, true),
                   const Gap.v(h: 16),
                   CustomTextField().passwordForm('Password', Icons.lock,
                       Icons.visibility_off, _passwordController),

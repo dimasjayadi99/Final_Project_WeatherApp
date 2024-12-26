@@ -85,4 +85,14 @@ class AuthService {
       rethrow;
     }
   }
+
+  Future<void> updateData(String uid, Map<String, dynamic> updatedData) async {
+    try {
+      await database.ref.child('users').child(uid).update(updatedData);
+    } on SocketException {
+      throw Exception('An error occurred with the internet connection');
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

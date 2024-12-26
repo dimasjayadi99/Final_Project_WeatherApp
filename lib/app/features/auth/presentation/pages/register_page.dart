@@ -59,16 +59,16 @@ class RegisterPage extends StatelessWidget {
       child: Column(
         children: [
           CustomTextField().generalForm('Alamat email', Icons.email,
-              _emailController, TextInputType.emailAddress),
+              _emailController, TextInputType.emailAddress, true),
           const Gap.v(h: 16),
           CustomTextField().generalForm('Nama Depan', Icons.person,
-              _firstNameController, TextInputType.text),
+              _firstNameController, TextInputType.text, true),
           const Gap.v(h: 16),
           CustomTextField().generalForm('Nama Belakang', Icons.person,
-              _lastNameController, TextInputType.text),
+              _lastNameController, TextInputType.text, true),
           const Gap.v(h: 16),
-          CustomTextField().generalForm(
-              'No.Telp', Icons.phone, _phoneController, TextInputType.number),
+          CustomTextField().generalForm('No.Telp', Icons.phone,
+              _phoneController, TextInputType.number, true),
         ],
       ),
     );

@@ -13,4 +13,5 @@ class RouterConst {
   static const earthQuakeHistory = '/earthquakeHistory';
   static const about = '/about';
   static const notification = '/notification';
+  static const profile = '/profile';
 }

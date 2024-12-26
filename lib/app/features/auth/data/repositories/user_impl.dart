@@ -19,4 +19,13 @@ class UserImpl extends UserRepository {
       rethrow;
     }
   }
+
+  @override
+  Future<void> updateDataUser(String uid, Map<String, dynamic> data) async {
+    try {
+      await authService.updateData(uid, data);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

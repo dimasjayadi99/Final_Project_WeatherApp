@@ -13,7 +13,9 @@ class SettingsPage extends GetView<SettingsController> {
       title: 'Pengaturan Profile',
       label: 'Pengaturan terkait profile Anda',
       icon: Icons.person_outline_rounded,
-      onTap: (BuildContext context) {},
+      onTap: (BuildContext context) {
+        Get.toNamed(RouterConst.profile);
+      },
     ),
     MenuProfile(
       title: 'Notifikasi',

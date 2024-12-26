@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class CustomTextField {
   TextFormField generalForm(String label, IconData prefixIcon,
-      TextEditingController controller, TextInputType inputType) {
+      TextEditingController controller, TextInputType inputType, bool enable) {
     return TextFormField(
       keyboardType: inputType,
       controller: controller,
       decoration: InputDecoration(
+          enabled: enable,
           prefixIcon: Icon(prefixIcon),
           hintText: '$label anda...',
           label: Text(label),
