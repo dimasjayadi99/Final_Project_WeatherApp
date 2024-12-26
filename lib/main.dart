@@ -32,7 +32,6 @@ void main() async {
       builder: (context) => const MyApp(),
       onFinish: () async {
         await SharedPrefHelper().setShowCase();
-        print('berhasil showcase');
       }));
 }
 
