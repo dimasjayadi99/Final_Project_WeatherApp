@@ -28,7 +28,12 @@ void main() async {
       statusBarIconBrightness: Brightness.light,
     ),
   );
-  runApp(ShowCaseWidget(builder: (context) => const MyApp()));
+  runApp(ShowCaseWidget(
+      builder: (context) => const MyApp(),
+      onFinish: () async {
+        await SharedPrefHelper().setShowCase();
+        print('berhasil showcase');
+      }));
 }
 
 class MyApp extends StatelessWidget {

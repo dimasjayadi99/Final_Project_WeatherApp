@@ -75,12 +75,15 @@ class WeatherHomeController extends GetxController {
   void startShowcase() {
     var context = Get.context!;
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ShowCaseWidget.of(context).startShowCase([
-        oneFeature.value,
-        secondFeature.value,
-        thirdFeature.value,
-        fourthFeature.value,
-      ]);
+      final showCase = SharedPrefHelper().getShowCase();
+      if (showCase) {
+        ShowCaseWidget.of(context).startShowCase([
+          oneFeature.value,
+          secondFeature.value,
+          thirdFeature.value,
+          fourthFeature.value,
+        ]);
+      }
     });
   }
 

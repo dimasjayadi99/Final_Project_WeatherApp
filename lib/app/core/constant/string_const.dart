@@ -3,6 +3,7 @@ class StringConst {
 
   static const isFirstKey = 'isFirst';
   static const uidKey = 'uid';
+  static const showCase = 'showCase';
 
   static const appName = 'Pantera';
   static const tagline = 'Pantau Nusantara';

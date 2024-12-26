@@ -29,4 +29,12 @@ class SharedPrefHelper {
       await _prefs?.remove(key);
     }
   }
+
+  Future<void> setShowCase() async {
+    await _prefs?.setBool(StringConst.showCase, false);
+  }
+
+  bool getShowCase() {
+    return _prefs?.getBool(StringConst.showCase) ?? true;
+  }
 }
